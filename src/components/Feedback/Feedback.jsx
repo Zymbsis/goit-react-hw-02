@@ -1,12 +1,13 @@
 import css from './Feedback.module.css';
-// import { useState } from 'react';
-const Feedback = ({ children, value }) => {
+
+const Feedback = ({ clicks, total, positive }) => {
   return (
     <div className={css.optionsWrapper}>
-      <span>
-        {children}
-        {value}
-      </span>
+      <span>Good: {clicks.good}</span>
+      <span>Neutral: {clicks.neutral}</span>
+      <span>Bad: {clicks.bad}</span>
+      <span>Total: {total}</span>
+      <span>Positive: {positive}</span>
     </div>
   );
 };

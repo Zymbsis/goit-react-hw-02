@@ -1,10 +1,23 @@
 import css from './Options.module.css';
 
-const Options = ({ children, handleClick }) => {
+const Options = ({ handleClick, total }) => {
   return (
-    <div className={css.buttonWrapper}>
-      <button onClick={handleClick}>{children}</button>
-    </div>
+    <ul className={css.buttonWrapper}>
+      <li>
+        <button onClick={() => handleClick('good')}>Good</button>
+      </li>
+      <li>
+        <button onClick={() => handleClick('neutral')}>Neutral</button>
+      </li>
+      <li>
+        <button onClick={() => handleClick('bad')}>Bad</button>
+      </li>
+      {total !== 0 && (
+        <li>
+          <button onClick={() => handleClick('reset')}>Reset</button>
+        </li>
+      )}
+    </ul>
   );
 };
 export default Options;
